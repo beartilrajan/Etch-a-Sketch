@@ -4,6 +4,9 @@ let drawing = false;
 document.addEventListener("mousedown", () => drawing = true);
 document.addEventListener("mouseup", () => drawing = false);
 
+container.addEventListener("dragstart", e => e.preventDefault());
+container.addEventListener("mousedown", e=> e.preventDefault());
+
 
 function grid() {
     const div = document.createElement("div");
@@ -16,7 +19,7 @@ function grid() {
     });
 
 
-    div.addEventListener("mouseover", function () {
+    div.addEventListener("mouseenter", function () {
         if (drawing) {
 
             div.style.background = "red";
