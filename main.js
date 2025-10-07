@@ -5,13 +5,16 @@ document.addEventListener("mousedown", () => drawing = true);
 document.addEventListener("mouseup", () => drawing = false);
 
 container.addEventListener("dragstart", e => e.preventDefault());
-container.addEventListener("mousedown", e=> e.preventDefault());
+container.addEventListener("mousedown", e => e.preventDefault());
 
 
-function grid() {
+function childsquare(size) {
     const div = document.createElement("div");
     div.classList.add("square");
-    const squares = document.querySelectorAll(".square");
+    const square = document.querySelectorAll(".square");
+
+    div.style.width = `${size}px`;
+    div.style.height = `${size}px`;
 
     div.addEventListener("mousedown", function () {
         div.style.background = "red";
@@ -30,18 +33,23 @@ function grid() {
 
 }
 
+function grid() {
+    container.innerHTML = "";
+    const size = 960 / n;
+    for (let i = 1; i <= n * n; i++) {
+        childsquare(size);
+    }
 
 
 
-
-
-for (let i = 1; i <= 16 * 16; i++) {
-    grid();
 }
 
-/*     
+const btn = document.getElementById("btn");
+btn.addEventListener("click", function () {
+    let n = parseInt(prompt("Enter the size of Grid"));
+}
+)
 
-    div.addEventListener("mouseover",function(){
-        
-    });
- */
+
+grid(64);
+

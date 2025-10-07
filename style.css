@@ -20,8 +20,12 @@ body {
 }
 
 .square{
-    width: 6.25%;
-    height: 6.25%;
+    width: 1.5625%;
+    height: 1.5625%;
     border: 1px solid black;
     box-sizing: border-box;
+}
+
+.btn{
+    padding: 20px;
 }
