@@ -1,6 +1,6 @@
 let a;
 
-let randomMode = true;
+let randomMode = false;
 
 function randomcolor() {
     const r = Math.floor(Math.random() * 256);
@@ -29,7 +29,7 @@ function childsquare(size, color) {
     div.style.height = `${size}px`;
 
     div.addEventListener("mousedown", function () {
-        if (!randomMode) {
+        if (randomMode) {
             div.style.background = randomcolor();
         }
         else{
@@ -40,7 +40,7 @@ function childsquare(size, color) {
 
     div.addEventListener("mouseenter", function () {
         if (drawing) {
-                    if (!randomMode) {
+                    if (randomMode) {
             div.style.background = randomcolor();
         }
         else{
